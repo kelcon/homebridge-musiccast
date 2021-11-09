@@ -1,5 +1,5 @@
 {
-  "name": "homebridge-musiccast-tv",
+  "name": "homebridge-musiccast",
   "version": "1.8.1",
   "description": "Homebridge plugin for Yamaha MusicCast devices",
   "main": "index.js",
