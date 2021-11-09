@@ -800,12 +800,12 @@ MusicCastTV.prototype = {
 		ServiceList.push(TelevisionSpeakerService);
 		
 		if(this.volumeFan) {
-			let TelevisionFanService = new Service.Fan(this.volumeName);
+			let TelevisionFanService = new Service.SmartSpeaker(this.volumeName);
+//			TelevisionFanService
+//				.getCharacteristic(Characteristic.On)
+//					.on('get', this.getActive.bind(this));
 			TelevisionFanService
-				.getCharacteristic(Characteristic.On)
-					.on('get', this.getActive.bind(this));
-			TelevisionFanService
-				.getCharacteristic(Characteristic.RotationSpeed)
+				.getCharacteristic(Characteristic.Volume)
 					.on('get', this.getFakeVolume.bind(this))
 					.on('set', this.setFakeVolume.bind(this));
 			TelevisionService.addLinkedService(TelevisionFanService);
